@@ -292,7 +292,7 @@
       <div class="dd-item has-sub">
         <span>Appearance</span><span class="dd-arrow">▶</span>
         <div class="submenu">
-          <div class="dd-item"><span>Full Screen</span><span class="dd-shortcut">F11</span></div>
+          <div class="dd-item" id="menu-fullscreen"><span>Full Screen</span><span class="dd-shortcut">F11</span></div>
           <div class="dd-item"><span>Zen Mode</span><span class="dd-shortcut">Ctrl+K Z</span></div>
           <div class="dd-sep"></div>
           <div class="dd-item"><span>Show Menu Bar</span></div>
@@ -517,6 +517,26 @@
 
   overlay.addEventListener('click', closeAll);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+
+  // Fullscreen support
+  const fullscreenBtn = document.getElementById('menu-fullscreen');
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFullscreen();
+      closeAll();
+    });
+  }
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        alert(`전체 화면 모드를 실행할 수 없습니다: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
 </script>
 </body>
 </html>

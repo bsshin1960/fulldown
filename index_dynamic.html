@@ -318,7 +318,11 @@
         row.addEventListener('click', (e) => {
           e.stopPropagation();
           if (!item.disabled) {
-            alert(`[클릭된 메뉴]: ${item.label}`);
+            if (item.label === 'Full Screen') {
+              toggleFullscreen();
+            } else {
+              alert(`[클릭된 메뉴]: ${item.label}`);
+            }
             closeAll();
           }
         });
@@ -364,6 +368,16 @@
 
   overlay.addEventListener('click', closeAll);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        alert(`전체 화면 모드를 실행할 수 없습니다: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
 
   // 실행
   initDynamicMenu();
