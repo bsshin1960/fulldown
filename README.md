@@ -1,5 +1,7 @@
 # 🎛️ Cursor Style Pulldown Menu Launcher
 
+[![Hugging Face Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/deploy-to-spaces-lg.svg)](https://huggingface.co/spaces/bsshin1960/fulldown)
+
 이 프로젝트는 **Cursor IDE 스타일의 드롭다운 메뉴**를 웹(HTML/JS)과 데스크톱 애플리케이션(PyQt6, Tkinter) 환경 모두에서 동일하게 체험하고 사용할 수 있도록 제작된 메뉴 런처 프로젝트입니다.
 
 ---

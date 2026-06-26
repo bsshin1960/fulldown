@@ -9,6 +9,8 @@ pinned: false
 
 # 🚀 Hugging Face Spaces용 Cursor 스타일 동적 메뉴
 
+[![Hugging Face Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/deploy-to-spaces-lg.svg)](https://huggingface.co/spaces/bsshin1960/fulldown)
+
 이 저장소는 Hugging Face Spaces의 **Static HTML SDK**를 사용하여 배포되는 정적 웹 서비스 프로젝트입니다.
 
 ## 📂 파일 구성 및 업로드 안내
